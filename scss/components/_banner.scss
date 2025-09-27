@@ -11,7 +11,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+    min-height: 100vh;
   .main-content {
     display: flex;
     flex-direction: column;
