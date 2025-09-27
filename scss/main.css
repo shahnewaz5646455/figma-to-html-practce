@@ -11,6 +11,7 @@ img {
   background-color: #f9f7f2;
   display: flex;
   justify-content: center;
+   min-height: 100vh;
   align-items: center;
 }
 .banner .main-content {
