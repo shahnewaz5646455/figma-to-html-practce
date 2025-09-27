@@ -1,4 +1,3 @@
-
 img {
   max-width: 100%;
   height: auto;
@@ -9,9 +8,9 @@ img {
 .banner {
   padding: 1.5rem 1rem;
   background-color: #f9f7f2;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-   min-height: 100vh;
   align-items: center;
 }
 .banner .main-content {
@@ -238,7 +237,6 @@ img {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
