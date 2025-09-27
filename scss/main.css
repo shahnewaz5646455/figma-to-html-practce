@@ -1,15 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f9f7f2;
-}
-body {
-  font-family: "Manrope", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  overflow-x: hidden;
-}
+
 img {
   max-width: 100%;
   height: auto;
