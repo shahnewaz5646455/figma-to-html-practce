@@ -34,6 +34,60 @@
   letter-spacing: 0px;
   text-align: center;
 }
+.product-section .cards {
+  padding: 20px;
+  width: 91%;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  justify-items: center;
+}
+.product-section .cards .card {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 267px;
+  height: 391px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgb(244, 244, 244), rgba(244, 244, 244, 0) 100%);
+}
+.product-section .cards .card div {
+  justify-content: center;
+  justify-items: center;
+}
+.product-section .cards .card .img {
+  margin-top: 30px;
+  width: 135px;
+  height: 212px;
+}
+.product-section .cards .card .img img {
+  width: 100%;
+}
+.product-section .cards .card .info {
+  /* Group 11 */
+  width: 208px;
+  margin-top: 30px;
+  height: 89px;
+}
+.product-section .cards .card .info h1 {
+  width: 98px;
+  height: 35px;
+  color: rgb(28, 28, 28);
+  white-space: nowrap;
+  font-family: Manrope;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
+.product-section .cards .card .info p {
+  width: 208px;
+  height: 44px;
+  text-align: center;
+  font-size: 16px;
+  color: #777777;
+  font-weight: 600;
+}
 
 img {
   max-width: 100%;
