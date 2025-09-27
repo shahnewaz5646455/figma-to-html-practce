@@ -8,10 +8,12 @@ img {
 .banner {
   padding: 1.5rem 1rem;
   background-color: #f9f7f2;
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-    min-height: 100vh;
+  
   .main-content {
     display: flex;
     flex-direction: column;
