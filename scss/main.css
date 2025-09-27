@@ -1,10 +1,21 @@
 .product-section {
   background-color: #f9f7f2;
 }
-.product-section .title h1 {
+.product-section .all-title {
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+.product-section .all-title .title {
+  justify-content: center;
+  justify-items: center;
+}
+.product-section .all-title .title h1 {
   width: 31.373rem;
   height: 3.875rem;
   color: rgb(28, 28, 28);
+  white-space: nowrap;
   font-family: Manrope;
   font-size: 45px;
   font-weight: 800;
@@ -12,7 +23,7 @@
   letter-spacing: 0px;
   text-align: center;
 }
-.product-section .title p {
+.product-section .all-title .title p {
   width: 56.3125rem;
   height: 3.5rem;
   color: rgb(119, 119, 119);
