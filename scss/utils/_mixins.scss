@@ -1,0 +1,35 @@
+@use './variables' as v;
+
+// Mobile breakpoint (320px to 425px)
+@mixin mobile {
+  @media (min-width: #{v.$breakpoint-mobile}) and (max-width: #{v.$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+// Tablet breakpoint (426px to 768px)
+@mixin tablet {
+  @media (min-width: #{v.$breakpoint-tablet}) and (max-width: #{v.$breakpoint-large - 1px}) {
+    @content;
+  }
+}
+
+// Large breakpoint (769px and above)
+@mixin large {
+  @media (min-width: #{v.$breakpoint-large}) {
+    @content;
+  }
+}
+
+// Flex center mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Grid center mixin
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}

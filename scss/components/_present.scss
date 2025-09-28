@@ -1,118 +1,270 @@
+// Import utils
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
 .present-section {
-  width: 71.25rem;
-  height: 36.375rem;
   margin: 0 auto;
   display: flex;
-  gap: 52px;
   justify-content: center;
   align-items: center;
-  .grid-layout {
-    width: 31.625rem;
-    height: 32.5625rem;
+  gap: v.$spacing-xl;
 
+  // Mobile styles
+  @include m.mobile {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: v.$spacing-md;
+    gap: v.$spacing-lg;
+  }
+
+  // Tablet styles
+  @include m.tablet {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    gap: v.$spacing-lg;
+  }
+
+  // Large styles
+  @include m.large {
+    width: 71.25rem; // 1140px
+    height: 36.375rem; // 582px
+  }
+
+  .grid-layout {
     display: grid;
-    row-gap: 30px;
-    column-gap: 29.72px;
+    row-gap: v.$spacing-lg;
+    column-gap: 1.8575rem; // 29.72px
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    border-radius: 0.625rem; // 10px
 
-    .card1 {
-      grid-column: 1/2;
-      grid-row: 1/2;
-      /* Rectangle 6 */
+    // Mobile styles
+   
 
-      transform: rotate(-180deg);
-      border-radius: 10px;
-      background: linear-gradient(
-        270deg,
-        rgba(255, 0, 0, 1),
-        rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
-      );
-      opacity: 0.1;
-    }
-    .card2 {
-      grid-row: 2/4;
-      grid-column: 1/2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      background: rgba(87, 118, 57, 0.1);
-    }
-    .card3 {
-      grid-row: 3/4;
-
-      grid-column: 2/3;
-
-      border-radius: 10px;
-      background: linear-gradient(
-        90deg,
-        rgba(217, 217, 217, 1),
-        rgba(255, 255, 255, 0) 100%
-      );
+    // Tablet styles
+    @include m.tablet {
+      width: 100%;
+      max-width: 31.625rem; // 506px
+      height: 32.5625rem; // 521px
     }
 
-    .card4 {
-      grid-row: 1/3;
-      grid-column: 2/3;
-      border-radius: 10px;
-      background: rgba(247, 166, 6, 0.1);
+    // Large styles
+    @include m.large {
+      width: 31.625rem; // 506px
+      height: 32.5625rem; // 521px
+    }
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .card {
+      border-radius: 0.625rem; // 10px
+
+      &.card1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        transform: rotate(-180deg);
+        background: v.$gradient-red;
+        opacity: 0.1;
+
+       
+      }
+
+      &.card2 {
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+        @include m.flex-center;
+        background: v.$card-green-bg;
+
+        
+
+        div {
+          @include m.flex-center;
+          width: 100%;
+          height: 100%;
+
+          img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+
+           
+          }
+        }
+      }
+
+      &.card3 {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        background: v.$gradient-gray;
+
+       
+      }
+
+      &.card4 {
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+        @include m.flex-center;
+        background: v.$card-orange-bg;
+
+       
+
+        div {
+          @include m.flex-center;
+          width: 100%;
+          height: 100%;
+
+          img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+
+            
+          }
+        }
+      }
     }
   }
+
   .info {
-    width: 36.375rem;
-    height: 32.5625rem;
-    .info-title {
-      color: rgba(28, 28, 28, 1);
-      margin-bottom: 20px;
+    font-family: 'Manrope', sans-serif;
 
-      font-family: Manrope;
-      font-size: 45px;
-      font-weight: 800;
-      line-height: 61px;
-      letter-spacing: 0px;
-      text-align: left; /* title */
-      width: 413px;
-      height: 123px;
+    // Mobile styles
+    @include m.mobile {
+      width: 100%;
+      height: auto;
+      text-align: center;
     }
-    .second-heading {
-      color: rgba(28, 28, 28, 1);
-      margin-top: 30px;
-      margin-bottom: 10px;
 
-      font-family: Manrope;
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 27px;
-      letter-spacing: 0px;
-      text-align: left; /* title */
-      width: 129px;
-      height: 28px;
+    // Tablet styles
+    @include m.tablet {
+      width: 100%;
+      height: auto;
+      max-width: 36.375rem; // 582px
     }
-    .third-heading {
-      color: rgba(28, 28, 28, 1);
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-family: Manrope;
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 27px;
-      letter-spacing: 0px;
-      text-align: left; /* title */
-      width: 164px;
-      height: 28px;
-    }
-    p {
-      font-family: Manrope;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 28px;
-      letter-spacing: 0px;
+
+    // Large styles
+    @include m.large {
+      width: 36.375rem; // 582px
+      height: 32.5625rem; // 521px
       text-align: left;
+    }
+
+    .info-title {
+      color: v.$primary-color;
+      font-weight: 800;
+      margin-bottom: v.$spacing-md;
+
+      // Mobile styles
+      @include m.mobile {
+        font-size: 1.75rem; // 28px
+        line-height: 1.3;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+
+      // Tablet styles
+      @include m.tablet {
+        font-size: 2rem; // 32px
+        line-height: 1.3;
+        width: 100%;
+        height: auto;
+      }
+
+      // Large styles
+      @include m.large {
+        font-size: v.$font-size-lg; // 45px
+        line-height: 61px;
+        width: 25.8125rem; // 413px
+        height: 7.6875rem; // 123px
+      }
+    }
+
+    p {
+      font-weight: 500;
+      line-height: 1.75; // 28px
+      color: v.$secondary-color;
+
+      @include m.mobile {
+        font-size: v.$font-size-xs; // 14px
+        text-align: center;
+      }
+
+      @include m.tablet {
+        font-size: v.$font-size-sm; // 16px
+      }
+
+      @include m.large {
+        font-size: v.$font-size-sm; // 16px
+        text-align: left;
+      }
+    }
+
+    .second-heading,
+    .third-heading {
+      color: v.$primary-color;
+      font-weight: 800;
+      margin-bottom: v.$spacing-xs;
+
+      @include m.mobile {
+        font-size: 1.125rem; // 18px
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-top: v.$spacing-md;
+      }
+
+      @include m.tablet {
+        font-size: 1.125rem; // 18px
+        width: auto;
+        height: auto;
+      }
+
+      @include m.large {
+        font-size: v.$font-size-md; // 20px
+        line-height: 27px;
+        margin-top: v.$spacing-lg;
+        
+        &.second-heading {
+          width: 8.0625rem; // 129px
+          height: 1.75rem; // 28px
+        }
+        
+        &.third-heading {
+          width: 10.25rem; // 164px
+          height: 1.75rem; // 28px
+        }
+      }
+    }
+
+    .third-heading {
+      @include m.mobile {
+        margin-top: v.$spacing-md;
+      }
+    }
+  }
+}
+
+// Additional responsive adjustments
+@include m.mobile {
+  .present-section {
+    .grid-layout {
+      .card {
+        min-height: 5rem;
+      }
+    }
+  }
+}
+
+@include m.tablet {
+  .present-section {
+    .info {
+      p {
+        margin-bottom: v.$spacing-sm;
+      }
     }
   }
 }

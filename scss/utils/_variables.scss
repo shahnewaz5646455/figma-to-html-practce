@@ -1,2 +1,25 @@
-$primary-color: #10a98a; // coffee brown
-$secondary-color: #c69c6d
+// Breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 426px;
+$breakpoint-large: 769px;
+
+// Colors
+$primary-color: rgba(28, 28, 28, 1);
+$secondary-color: rgba(119, 119, 119, 1);
+$gradient-red: linear-gradient(270deg, rgba(255, 0, 0, 1), rgba(255, 137, 56, 1) 100%);
+$gradient-gray: linear-gradient(90deg, rgba(217, 217, 217, 1), rgba(255, 255, 255, 0) 100%);
+$card-green-bg: rgba(87, 118, 57, 0.1);
+$card-orange-bg: rgba(247, 166, 6, 0.1);
+
+// Font sizes
+$font-size-xs: 0.875rem;   // 14px
+$font-size-sm: 1rem;       // 16px
+$font-size-md: 1.25rem;    // 20px
+$font-size-lg: 2.8125rem;  // 45px
+
+// Spacing
+$spacing-xs: 0.625rem;     // 10px
+$spacing-sm: 1rem;         // 16px
+$spacing-md: 1.25rem;      // 20px
+$spacing-lg: 1.875rem;     // 30px
+$spacing-xl: 3.25rem;      // 52px
