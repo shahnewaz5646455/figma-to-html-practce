@@ -1,7 +1,7 @@
 @import "components/product";
 @import "utils/variables";
 @import "components/banner";
-@import "components/present"
+@import "components/present";
 
 
 * {
@@ -14,4 +14,5 @@ body {
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
+  background-color: #f9f7f2;
 }
