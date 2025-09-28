@@ -1,3 +1,5 @@
+@use 'utils/variables' as v;
+@use 'utils/mixins' as m;
 @import "components/product";
 @import "utils/variables";
 @import "components/banner";
