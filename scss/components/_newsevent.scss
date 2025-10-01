@@ -1,0 +1,99 @@
+// _variables.scss - Define your breakpoints and variables
+$breakpoints: (
+  xs: 20em,   // 320px
+  sm: 26.5625em, // 425px
+  md: 48em,   // 768px
+  lg: 64em    // 1024px
+);
+
+$primary-color: blue;
+$text-color: cyan;
+$spacing-unit: 1rem; // 16px base
+
+// _mixins.scss - Responsive mixins
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints";
+  }
+}
+
+// Main SCSS file
+.news-events {
+  padding: 3.125rem 0; // 50px converted to rem
+
+  &__title {
+    font-size: 2.5rem; // 40px
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 1.25rem; // 20px
+    line-height: 1.2;
+    
+    @include respond-to(md) {
+      font-size: 2.8125rem; // 45px
+    }
+    
+    @include respond-to(lg) {
+      font-size: 3.125rem; // 50px
+    }
+  }
+
+  &__description {
+    font-size: 1rem; // 16px
+    line-height: 1.6;
+    color: $text-color;
+    margin-bottom: 2.5rem; // 40px
+    opacity: 0.8;
+    
+    @include respond-to(md) {
+      font-size: 1.125rem; // 18px
+      margin-bottom: 3.125rem; // 50px
+    }
+  }
+
+  &__card {
+    border: none;
+    border-radius: 0.5rem; // 8px
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); // 4px 6px
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    }
+    
+    // Mobile-first: full width with centered content
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem; // 24px
+    
+    @include respond-to(sm) {
+      // Tablet: maintain some centering but allow natural flow
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    @include respond-to(lg) {
+      // Desktop: full card styling
+      padding: 2rem; // 32px
+    }
+  }
+}
+
+// Additional responsive utilities
+.container {
+  @include respond-to(xs) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @include respond-to(lg) {
+    max-width: 75rem; // 1200px
+  }
+}
