@@ -1,0 +1,310 @@
+@use "../utils/mixins" as m;
+.customer-comment {
+  margin-top: 8.125rem;
+  border-radius: 0.625rem; // 10px
+  background: linear-gradient(
+    270deg,
+    rgba(255, 0, 0, 1),
+    rgba(255, 137, 56, 1) 100%
+  );
+  height: 40.625rem; // 650px
+  width: 71.25rem; // 1140px
+
+  // Left content column
+  .col-6:first-child {
+    height: 21.3125rem; // 341px
+    width: 27.5rem; // 440px
+    padding: 0;
+    border: 2px solid red;
+
+    h2 {
+      color: rgba(244, 244, 244, 1);
+      font-family: 'Manrope', sans-serif;
+      font-size: 2.8125rem; // 45px
+      font-weight: 800;
+      line-height: 3.8125rem; // 61px
+      letter-spacing: 0px;
+      text-align: left;
+      width: 24.3125rem; // 389px
+      height: 7.6875rem; // 123px
+    }
+
+    p.text-white {
+      color: rgba(244, 244, 244, 1);
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem; // 16px
+      font-weight: 500;
+      line-height: 1.75rem; // 28px
+      margin-top: 1.25rem; // 20px
+      letter-spacing: 0px;
+      text-align: left;
+      width: 27.5rem; // 440px
+      height: 7rem; // 112px
+    }
+
+    button {
+      background-color: white;
+      border-radius: 0.5rem; // 8px
+      margin-top: 1.875rem; // 30px
+      width: 8.6875rem; // 139px
+      border: none;
+      font-weight: 600;
+      font-size: 1.25rem; // 20px
+      height: 3.5rem; // 56px
+      position: relative;
+
+      span {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 0, 1),
+          rgba(255, 137, 56, 1)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+  }
+
+  // Right content column - testimonial cards
+  .comment-box {
+    border: 2px solid rgb(0, 255, 229);
+    width: 32.75rem; // 524px
+    height: 30rem; // 480px
+    display: flex;
+    position: relative;
+
+    // First testimonial card (top, faded)
+    & > div:first-child {
+      opacity: 0.3;
+      
+      margin-top: 7.0625rem; // 113px
+      margin-left: 1.125rem; // 18px
+      position: absolute;
+      top: -5.9375rem; // -95px
+      z-index: 10;
+      right: 0;
+      width: 23.5019rem; // 376.03px
+      height: 12.6281rem; // 202.05px
+      border-radius: 0.5rem; // 8px
+      background: rgba(255, 255, 255, 1);
+
+      // Avatar container
+      & > div:first-child {
+        background-color: white;
+        padding: 0.1875rem; // 3px
+        position: absolute;
+        top: -1.125rem; // -18px
+        left: -1.25rem; // -20px
+        width: 3.125rem; // 50px
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      // Content text
+      p {
+        color: rgba(119, 119, 119, 1);
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 400;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 2.5625rem; // 41px
+        margin-left: 3.125rem; // 50px
+        width: 18.5081rem; // 296.13px
+        height: 4.5625rem; // 73px
+      }
+
+      h4 {
+        color: rgba(28, 28, 28, 1);
+        margin-left: 3.125rem; // 50px
+        margin-top: 0.625rem; // 10px
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 700;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 5.3125rem; // 85px
+        height: 1.75rem; // 28px
+      }
+
+      p:last-of-type {
+        color: rgba(93, 90, 111, 1);
+        margin-left: 3.125rem; // 50px
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 500;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 6.3125rem; // 101px
+        height: 1.75rem; // 28px
+      }
+
+      // Circles image container
+      & > div:last-child {
+        position: absolute;
+        top: 9.6875rem; // 155px
+        right: 1.5625rem; // 25px
+      }
+    }
+
+    // Second testimonial card (middle, primary)
+    & > div:nth-child(2) {
+      width: 27.0625rem; // 433px
+      margin-top: 8.75rem; // 140px
+      z-index: 50;
+      margin-left: 1.125rem; // 18px
+      position: relative;
+      height: 14.5625rem; // 233px
+      border-radius: 0.5rem; // 8px
+      background: rgba(255, 255, 255, 1);
+
+      // Avatar container
+      & > div:first-child {
+        background-color: white;
+        padding: 0.3125rem; // 5px
+        position: absolute;
+        top: -1.875rem; // -30px
+        left: -1.875rem; // -30px
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      // Content text
+      p {
+        color: rgba(119, 119, 119, 1);
+        font-family: 'Manrope', sans-serif;
+        font-size: 1rem; // 16px
+        font-weight: 400;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 2.5625rem; // 41px
+        margin-left: 3.125rem; // 50px
+        width: 21.3125rem; // 341px
+        height: 5.25rem; // 84px
+      }
+
+      h4 {
+        color: rgba(28, 28, 28, 1);
+        margin-left: 3.125rem; // 50px
+        margin-top: 1.25rem; // 20px
+        font-family: 'Manrope', sans-serif;
+        font-size: 1rem; // 16px
+        font-weight: 700;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 5.3125rem; // 85px
+        height: 1.75rem; // 28px
+      }
+
+      p:last-of-type {
+        color: rgba(93, 90, 111, 1);
+        margin-left: 3.125rem; // 50px
+        font-family: 'Manrope', sans-serif;
+        font-size: 1rem; // 16px
+        font-weight: 500;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 6.3125rem; // 101px
+        height: 1.75rem; // 28px
+      }
+
+      // Circles image container
+      & > div:last-child {
+        position: absolute;
+        top: 11.5625rem; // 185px
+        right: 1.5625rem; // 25px
+      }
+    }
+
+    // Third testimonial card (bottom, faded)
+    & > div:last-child {
+      opacity: 0.3;
+      margin-top: 7.0625rem; // 113px
+      margin-left: 1.125rem; // 18px
+      position: absolute;
+      top: 10.3125rem; // 165px
+      z-index: 10;
+      right: 0;
+      width: 23.5019rem; // 376.03px
+      height: 12.6281rem; // 202.05px
+      border-radius: 0.5rem; // 8px
+      background: rgba(255, 255, 255, 1);
+
+      // Avatar container
+      & > div:first-child {
+        background-color: white;
+        padding: 0.3125rem; // 5px
+        position: absolute;
+        top: -1.875rem; // -30px
+        left: -1.875rem; // -30px
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      // Content text
+      p {
+        color: rgba(119, 119, 119, 1);
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 400;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        margin-top: 2.5625rem; // 41px
+        margin-left: 3.125rem; // 50px
+        width: 18.5081rem; // 296.13px
+        height: 4.5625rem; // 73px
+      }
+
+      h4 {
+        color: rgba(28, 28, 28, 1);
+        margin-left: 3.125rem; // 50px
+        margin-top: 0.625rem; // 10px
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 700;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 5.3125rem; // 85px
+        height: 1.75rem; // 28px
+      }
+
+      p:last-of-type {
+        color: rgba(93, 90, 111, 1);
+        margin-left: 3.125rem; // 50px
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8681rem; // 13.89px
+        font-weight: 500;
+        line-height: 1.75rem; // 28px
+        letter-spacing: 0%;
+        text-align: left;
+        width: 6.3125rem; // 101px
+        height: 1.75rem; // 28px
+      }
+
+      // Circles image container
+      & > div:last-child {
+        position: absolute;
+        top: 9.6875rem; // 155px
+        right: 1.5625rem; // 25px
+      }
+    }
+  }
+}

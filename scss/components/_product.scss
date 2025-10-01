@@ -6,7 +6,7 @@ $breakpoint-large: 769px;
 $base-font-size: 16px; // Base for rem conversion
 
 // Colors
-$background-color: #f9f7f2;
+$background-color: white;
 $card-background: linear-gradient(180deg, rgba(244, 244, 244, 1), rgba(244, 244, 244, 0) 100%);
 $primary-text: rgba(28, 28, 28, 1);
 $secondary-text: rgba(119, 119, 119, 1);
@@ -137,7 +137,7 @@ $paragraph-large: 1rem;       // 16px
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .card {
+    .card-custom {
       background: $card-background;
       border-radius: 0.625rem; // 10px
       padding: 1.25rem; // 20px
