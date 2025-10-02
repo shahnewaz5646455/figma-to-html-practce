@@ -1,0 +1,331 @@
+@use "../utils/mixins" as m;
+
+footer {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 0, 0, 0.1),
+    rgba(255, 137.00003051757812, 55.999996185302734, 0.1) 100%
+  );
+  @include m.mobile {
+    
+    height: 270vh;
+  }
+  @include m.tablet {
+    height: auto;
+  }
+
+  .footer-main {
+    width: 1140px;
+    padding: 0;
+    height: 486px;
+    @include m.mobile {
+    }
+    @include m.tablet {
+      height: 800px;
+    }
+
+    .container {
+      .footer-top {
+        @include m.tablet {
+          margin-top: 40px;
+          display: flex;
+          justify-content: center;
+        }
+        @include m.mobile {
+          margin-top: 70px;
+          display: flex;
+          justify-content: center;
+          justify-items: center;
+          flex-direction: column;
+          gap: 40px;
+        }
+        .logo-container {
+          width: 50px;
+          .footer-logo {
+            /* Frame */
+            width: 62px;
+
+            height: 64px;
+            @include m.mobile {
+              width: 40px;
+
+              height: 40px;
+            }
+          }
+        }
+        .titles {
+          width: 406px;
+
+          height: 56px;
+
+          @include m.tablet {
+            width: 300px;
+          }
+          @include m.mobile {
+            width: 250px;
+            
+          }
+          h4 {
+            color: black;
+            font-family: Manrope;
+            white-space: nowrap;
+            font-size: 20px;
+            font-weight: 500;
+
+            line-height: 40px;
+            letter-spacing: 0%;
+            text-align: left; /* Ready to get strated? */
+            width: 202px;
+            height: 40px;
+            @include m.mobile {
+              width: 100px;
+              height: 40px;
+              font-weight: 600;
+              line-height: 20px;
+              font-size: 14px;
+              white-space: inherit;
+            }
+          }
+          button {
+            color: white;
+            font-weight: 500;
+            font-family: Manrope;
+            border-radius: 8px;
+            /* Group 3928 */
+            width: 164px;
+            border: none;
+            height: 56px;
+            background: linear-gradient(
+              270deg,
+              rgba(255, 0, 0, 1),
+              rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
+            );
+            @include m.tablet {
+              width: 100px;
+              height: 40px;
+              font-size: 10px;
+              font-weight: 500;
+            }
+            @include m.mobile {
+              width: 100px;
+              height: 40px;
+              font-size: 10px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .footer-middle {
+        margin-top: 104px;
+        @include m.tablet {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          row-gap: 20px;
+        }
+        @include m.mobile {
+          display: flex;
+          margin-top: 50px;
+          flex-direction: column;
+          justify-content: center;
+          justify-items: center;
+          align-items: center;
+          row-gap: 20px;
+        }
+
+        .links1 {
+          /* Group 3975 */
+
+          width: 108px;
+          padding: 0;
+          margin-right: 168px;
+          height: 191px;
+          @include m.tablet {
+            width: 50%;
+            margin: 0;
+          }
+          @include m.mobile {
+            width: 50%;
+            margin: 0;
+            border: 2px solid red;
+          }
+          h2 {
+            font-family: Manrope;
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+          }
+          ul {
+            list-style: none; /* removes bullets */
+            padding: 0; /* also remove default padding */
+            margin: 0;
+            font-family: Manrope;
+            font-size: 16px;
+            li {
+              margin-top: 18px;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .links2 {
+          width: 125px;
+          margin-right: 173px;
+          padding: 0;
+          font-family: Manrope;
+          height: 191px;
+          @include m.tablet {
+            width: 50%;
+            margin: 0;
+          }
+           @include m.mobile {
+            width: 50%;
+            margin: 0;
+          }
+          h2 {
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+          }
+          ul {
+            list-style: none; /* removes bullets */
+            padding: 0; /* also remove default padding */
+            margin: 0;
+            font-size: 16px;
+            li {
+              margin-top: 18px;
+              white-space: nowrap;
+            }
+          }
+        }
+        .links3 {
+          width: 84px;
+          margin: 0;
+          font-family: Manrope;
+          margin-right: 172px;
+          height: 111px;
+          @extend .links1;
+          @include m.tablet {
+            width: 50%;
+
+            margin: 0;
+          }
+           @include m.mobile {
+            width: 50%;
+            margin: 0;
+          }
+        }
+        .last {
+          width: 305px;
+          padding: 0;
+          @include m.tablet {
+            margin: 0;
+            width: 50%;
+          }
+           @include m.mobile {
+            width: 50%;
+            margin: 0;
+          }
+          h2 {
+            color: black;
+
+            font-family: Manrope;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 40px;
+            letter-spacing: 0%;
+            text-align: left; /* Subscribe to our newsletter */
+            width: 216px;
+            height: 80px;
+          }
+          .newsletter-input {
+            width: 305px;
+            height: 48px;
+            @include m.mobile{
+              width: 230px;
+            }
+            input {
+              height: 41px;
+
+              border: none;
+              background: transparent;
+              /* Group 3984 */
+
+              border-bottom: 2px solid black;
+               @include m.mobile{
+              width: 150px;
+            }
+            }
+            input::placeholder {
+              color: rgb(85, 79, 79);
+              font-size: 14px;
+              font-weight: 600;
+            }
+            .input-icon {
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              background: linear-gradient(
+                270deg,
+                rgba(255, 0, 0, 1),
+                rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
+              );
+              @include m.mobile{
+                width: 50px;
+              height: 50px;
+              }
+              i {
+                color: white;
+                width: 100%;
+              }
+            }
+          }
+          .all-icons {
+            margin-top: 48px;
+            i {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+      .footer-bottom {
+
+        margin-top: 109px;
+         @include m.mobile{
+              
+              margin-top: 100px;
+            }
+        .footer-title {
+          
+          h5 {
+            color: #494949;
+
+            font-family: Manrope;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
+            width: 297px;
+            height: 22px;
+            @include m.mobile{
+             color: #fc0e0e;
+
+            font-family: Manrope;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
+            width: 297px;
+            height: 22px;
+          }
+           
+          }
+        }
+      }
+    }
+  }
+}
