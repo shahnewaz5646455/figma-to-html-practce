@@ -31,7 +31,9 @@ footer {
         @include m.tablet {
           margin-top: 40px;
           display: flex;
-          justify-content: center;
+          flex-direction: row;
+          
+          justify-content: space-between;
         }
         @include m.mobile {
           margin-top: 70px;
@@ -122,7 +124,10 @@ footer {
         @include m.tablet {
           display: flex;
           flex-direction: row;
-          flex-wrap: wrap;
+          
+          justify-content: center;
+          justify-items: center;
+          align-items: center;
           row-gap: 20px;
         }
         @include m.mobile {
@@ -149,7 +154,6 @@ footer {
           @include m.mobile {
             width: 50%;
             margin: 0;
-            border: 2px solid red;
           }
           h2 {
             font-family: Manrope;
