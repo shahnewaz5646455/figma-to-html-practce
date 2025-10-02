@@ -1107,7 +1107,7 @@ footer {
 }
 @media (min-width: 320px) and (max-width: 425px) {
   footer {
-    height: 270vh;
+    height: 1200px;
   }
 }
 @media (min-width: 426px) and (max-width: 768px) {

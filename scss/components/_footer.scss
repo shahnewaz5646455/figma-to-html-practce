@@ -10,7 +10,7 @@ footer {
   );
   @include m.mobile {
     
-    height: 270vh;
+    height: 1200px;
   }
   @include m.tablet {
     height: auto;
