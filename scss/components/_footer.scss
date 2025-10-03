@@ -2,15 +2,14 @@
 
 footer {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(
     270deg,
     rgba(255, 0, 0, 0.1),
     rgba(255, 137.00003051757812, 55.999996185302734, 0.1) 100%
   );
   @include m.mobile {
-    
-    height: 1200px;
+height: 1200px;
   }
   @include m.tablet {
     height: auto;
@@ -32,7 +31,7 @@ footer {
           margin-top: 40px;
           display: flex;
           flex-direction: row;
-          
+
           justify-content: space-between;
         }
         @include m.mobile {
@@ -61,13 +60,15 @@ footer {
           width: 406px;
 
           height: 56px;
-
+          padding: 0;
+          margin-right: 60px;
           @include m.tablet {
             width: 300px;
+            margin-right: 0;
           }
           @include m.mobile {
             width: 250px;
-            
+            margin-right: 0;
           }
           h4 {
             color: black;
@@ -75,7 +76,7 @@ footer {
             white-space: nowrap;
             font-size: 20px;
             font-weight: 500;
-
+            margin-right: 40px;
             line-height: 40px;
             letter-spacing: 0%;
             text-align: left; /* Ready to get strated? */
@@ -84,6 +85,7 @@ footer {
             @include m.mobile {
               width: 100px;
               height: 40px;
+              margin-right: 0;
               font-weight: 600;
               line-height: 20px;
               font-size: 14px;
@@ -93,6 +95,7 @@ footer {
           button {
             color: white;
             font-weight: 500;
+            margin-right: 0;
             font-family: Manrope;
             border-radius: 8px;
             /* Group 3928 */
@@ -124,7 +127,7 @@ footer {
         @include m.tablet {
           display: flex;
           flex-direction: row;
-          
+
           justify-content: center;
           justify-items: center;
           align-items: center;
@@ -184,7 +187,7 @@ footer {
             width: 50%;
             margin: 0;
           }
-           @include m.mobile {
+          @include m.mobile {
             width: 50%;
             margin: 0;
           }
@@ -216,7 +219,7 @@ footer {
 
             margin: 0;
           }
-           @include m.mobile {
+          @include m.mobile {
             width: 50%;
             margin: 0;
           }
@@ -228,7 +231,7 @@ footer {
             margin: 0;
             width: 50%;
           }
-           @include m.mobile {
+          @include m.mobile {
             width: 50%;
             margin: 0;
           }
@@ -247,20 +250,20 @@ footer {
           .newsletter-input {
             width: 305px;
             height: 48px;
-            @include m.mobile{
+            @include m.mobile {
               width: 230px;
             }
             input {
               height: 41px;
-
+              width: 100%;
               border: none;
               background: transparent;
               /* Group 3984 */
 
               border-bottom: 2px solid black;
-               @include m.mobile{
-              width: 150px;
-            }
+              @include m.mobile {
+                width: 150px;
+              }
             }
             input::placeholder {
               color: rgb(85, 79, 79);
@@ -268,17 +271,17 @@ footer {
               font-weight: 600;
             }
             .input-icon {
-              width: 32px;
-              height: 32px;
+              width: 45px;
+              height: 40px;
               border-radius: 50%;
               background: linear-gradient(
                 270deg,
                 rgba(255, 0, 0, 1),
                 rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
               );
-              @include m.mobile{
-                width: 50px;
-              height: 50px;
+              @include m.mobile {
+                width: 30px;
+                height: 30px;
               }
               i {
                 color: white;
@@ -295,38 +298,32 @@ footer {
         }
       }
       .footer-bottom {
-
         margin-top: 109px;
-         @include m.mobile{
-              
-              margin-top: 100px;
-            }
+        @include m.mobile {
+          margin-top: 100px;
+        }
         .footer-title {
-          
           h5 {
             color: #494949;
 
             font-family: Manrope;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 400;
             line-height: 100%;
             letter-spacing: 0%;
             text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
             width: 297px;
             height: 22px;
-            @include m.mobile{
-             color: #fc0e0e;
-
-            font-family: Manrope;
-            font-size: 10px;
-            font-weight: 500;
-            line-height: 100%;
-            letter-spacing: 0%;
-            text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
-            width: 297px;
-            height: 22px;
-          }
-           
+            @include m.mobile {
+              font-family: Manrope;
+              font-size: 0.8rem;
+              font-weight: 500;
+              line-height: 100%;
+              letter-spacing: 0%;
+              text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
+              width: 297px;
+              height: 22px;
+            }
           }
         }
       }
