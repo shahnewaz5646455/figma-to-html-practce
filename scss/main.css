@@ -280,7 +280,6 @@
   .customer-comment {
     max-width: 630px;
     height: auto;
-    border: 4px solid black;
   }
 }
 @media (min-width: 769px) and (max-width: 1199px) {
