@@ -9,12 +9,18 @@
 
 // Tablet breakpoint (426px to 768px)
 @mixin tablet {
-  @media (min-width: #{v.$breakpoint-tablet}) and (max-width: #{v.$breakpoint-large - 1px}) {
+  @media (min-width: #{v.$breakpoint-tablet}) and (max-width: #{v.$breakpoint-medium - 1px}) {
     @content;
   }
 }
 
-// Large breakpoint (769px and above)
+// Large breakpoint (769px and 1200px)
+@mixin medium {
+  @media (min-width: #{v.$breakpoint-medium}) and (max-width: #{v.$breakpoint-large - 1px}) {
+    @content;
+  }
+}
+
 @mixin large {
   @media (min-width: #{v.$breakpoint-large}) {
     @content;

@@ -8,21 +8,44 @@ footer {
     rgba(255, 0, 0, 0.1),
     rgba(255, 137.00003051757812, 55.999996185302734, 0.1) 100%
   );
+
   @include m.mobile {
-height: 1200px;
+    height: 1200px;
   }
+
   @include m.tablet {
     height: auto;
+  }
+
+  // Medium devices (769px - 1200px)
+  @include m.medium {
+    height: auto;
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-main {
     width: 1140px;
     padding: 0;
     height: 486px;
+
     @include m.mobile {
+      // Mobile styles remain unchanged
     }
+
     @include m.tablet {
       height: 800px;
+    }
+
+    // Medium devices (769px - 1200px)
+    @include m.medium {
+      width: 100%;
+      max-width: 1140px;
+      height: auto;
+      padding: 40px 20px;
     }
 
     .container {
@@ -31,9 +54,9 @@ height: 1200px;
           margin-top: 40px;
           display: flex;
           flex-direction: row;
-
           justify-content: space-between;
         }
+
         @include m.mobile {
           margin-top: 70px;
           display: flex;
@@ -42,36 +65,62 @@ height: 1200px;
           flex-direction: column;
           gap: 40px;
         }
+
+        // Medium devices (769px - 1200px)
+        @include m.medium {
+          margin-top: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+        }
+
         .logo-container {
           width: 50px;
-          .footer-logo {
-            /* Frame */
-            width: 62px;
 
+          .footer-logo {
+            width: 62px;
             height: 64px;
+
             @include m.mobile {
               width: 40px;
-
               height: 40px;
+            }
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              width: 55px;
+              height: 57px;
             }
           }
         }
+
         .titles {
           width: 406px;
-
           height: 56px;
           padding: 0;
           margin-right: 60px;
+
           @include m.tablet {
             width: 300px;
-            margin-right: 0;
+            margin-right: 10px;
           }
+
           @include m.mobile {
             width: 250px;
             margin-right: 0;
           }
+
+          // Medium devices (769px - 1200px)
+          @include m.medium {
+            width: 350px;
+            margin-right: 0;
+            height: 50px;
+          }
+
           h4 {
-            color: black;
+            color: #494949;
             font-family: Manrope;
             white-space: nowrap;
             font-size: 20px;
@@ -79,13 +128,15 @@ height: 1200px;
             margin-right: 40px;
             line-height: 40px;
             letter-spacing: 0%;
-            text-align: left; /* Ready to get strated? */
+            text-align: left;
             width: 202px;
             height: 40px;
-            @include m.tablet{
+
+            @include m.tablet {
               margin-right: 0;
               font-size: 18px;
             }
+
             @include m.mobile {
               width: 100px;
               height: 40px;
@@ -95,15 +146,28 @@ height: 1200px;
               font-size: 14px;
               white-space: inherit;
             }
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              font-size: 18px;
+              margin-right: 20px;
+              width: 180px;
+              line-height: 32px;
+            }
           }
+
           button {
             color: white;
+            overflow: hidden;
+            transition: transform 0.3s ease; 
+            z-index: 1;
+            transition: 1.6s all ease;
             font-weight: 500;
             margin-right: 0;
             font-family: Manrope;
             border-radius: 8px;
-            /* Group 3928 */
             width: 164px;
+            position: relative;
             border: none;
             height: 56px;
             background: linear-gradient(
@@ -111,6 +175,8 @@ height: 1200px;
               rgba(255, 0, 0, 1),
               rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
             );
+            
+
             @include m.tablet {
               width: 170px;
               height: 40px;
@@ -118,26 +184,63 @@ height: 1200px;
               font-weight: 600;
               white-space: nowrap;
             }
+
             @include m.mobile {
               width: 110px;
               height: 40px;
               font-size: 10px;
               font-weight: 700;
             }
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              width: 150px;
+              height: 48px;
+              font-size: 14px;
+              font-weight: 600;
+            }
           }
+          button::after {
+               background: linear-gradient(
+              270deg,
+              rgba(255, 137.00003051757812, 55.999996185302734, 1),
+              rgb(255, 3, 3) 100%
+            );
+              content: "";
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              height: 100%;
+              transform: translateX(100%);
+              transition: 1.5s all ease;
+            }
+
+            button:hover::after {
+              transform: translateX(0%);
+              
+            }
+            button:hover{
+              color: black;
+              font-weight: 600;
+              transform: scale(1.1); 
+            }
         }
       }
+
       .footer-middle {
         margin-top: 104px;
+
         @include m.tablet {
           display: flex;
           flex-direction: row;
-
           justify-content: center;
           justify-items: center;
           align-items: center;
           row-gap: 20px;
         }
+
         @include m.mobile {
           display: flex;
           margin-top: 50px;
@@ -148,36 +251,68 @@ height: 1200px;
           row-gap: 20px;
         }
 
-        .links1 {
-          /* Group 3975 */
+        // Medium devices (769px - 1200px)
+        @include m.medium {
+          margin-top: 80px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
+          justify-content: center;
+          align-items: start;
+        }
 
+        .links1 {
           width: 108px;
           padding: 0;
           margin-right: 168px;
           height: 191px;
+
           @include m.tablet {
             width: 50%;
             margin: 0;
           }
+
           @include m.mobile {
             width: 50%;
             margin: 0;
           }
+
+          // Medium devices (769px - 1200px)
+          @include m.medium {
+            width: 100%;
+            margin-right: 0;
+            height: auto;
+          }
+
           h2 {
             font-family: Manrope;
             font-size: 20px;
             font-weight: 700;
             white-space: nowrap;
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              font-size: 18px;
+            }
           }
+
           ul {
-            list-style: none; /* removes bullets */
-            padding: 0; /* also remove default padding */
+            list-style: none;
+            padding: 0;
             margin: 0;
             font-family: Manrope;
             font-size: 16px;
+
             li {
+              cursor: pointer;
               margin-top: 18px;
               white-space: nowrap;
+
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                font-size: 14px;
+                margin-top: 14px;
+              }
             }
           }
         }
@@ -188,30 +323,55 @@ height: 1200px;
           padding: 0;
           font-family: Manrope;
           height: 191px;
+
           @include m.tablet {
             width: 50%;
             margin: 0;
           }
+
           @include m.mobile {
             width: 50%;
             margin: 0;
           }
+
+          // Medium devices (769px - 1200px)
+          @include m.medium {
+            width: 100%;
+            margin-right: 0;
+            height: auto;
+          }
+
           h2 {
             font-size: 20px;
             font-weight: 700;
             white-space: nowrap;
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              font-size: 18px;
+            }
           }
+
           ul {
-            list-style: none; /* removes bullets */
-            padding: 0; /* also remove default padding */
+            list-style: none;
+            padding: 0;
             margin: 0;
             font-size: 16px;
+
             li {
               margin-top: 18px;
               white-space: nowrap;
+              cursor: pointer;
+
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                font-size: 14px;
+                margin-top: 14px;
+              }
             }
           }
         }
+
         .links3 {
           width: 84px;
           margin: 0;
@@ -219,62 +379,117 @@ height: 1200px;
           margin-right: 172px;
           height: 111px;
           @extend .links1;
+
           @include m.tablet {
             width: 50%;
-
             margin: 0;
           }
+
           @include m.mobile {
             width: 50%;
             margin: 0;
           }
+
+          // Medium devices (769px - 1200px)
+          @include m.medium {
+            width: 100%;
+            margin-right: 0;
+            height: auto;
+          }
         }
+
         .last {
           width: 305px;
           padding: 0;
+
           @include m.tablet {
             margin: 0;
             width: 50%;
           }
+
           @include m.mobile {
             width: 50%;
             margin: 0;
           }
+
+          // Medium devices (769px - 1200px)
+          @include m.medium {
+            width: 100%;
+            margin: 0;
+          }
+
           h2 {
             color: black;
-
             font-family: Manrope;
             font-size: 24px;
             font-weight: 600;
             line-height: 40px;
             letter-spacing: 0%;
-            text-align: left; /* Subscribe to our newsletter */
+            text-align: left;
             width: 216px;
             height: 80px;
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              font-size: 20px;
+              line-height: 32px;
+              width: 100%;
+              height: auto;
+              margin-bottom: 20px;
+            }
           }
+
           .newsletter-input {
             width: 305px;
             height: 48px;
+
+            @include m.tablet {
+              width: 200px;
+            }
+
             @include m.mobile {
               width: 230px;
             }
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              width: 100%;
+              max-width: 280px;
+            }
+
             input {
               height: 41px;
               width: 100%;
               border: none;
+              padding-bottom: 23px;
               background: transparent;
-              /* Group 3984 */
+              border-bottom: 2px solid #494949;
 
-              border-bottom: 2px solid black;
               @include m.mobile {
                 width: 150px;
               }
+              @include m.tablet {
+                width: 150px;
+              }
+
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                height: 38px;
+                padding-bottom: 20px;
+              }
             }
+
             input::placeholder {
               color: rgb(85, 79, 79);
               font-size: 14px;
               font-weight: 600;
+
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                font-size: 13px;
+              }
             }
+
             .input-icon {
               width: 45px;
               height: 40px;
@@ -284,50 +499,99 @@ height: 1200px;
                 rgba(255, 0, 0, 1),
                 rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
               );
+
               @include m.mobile {
                 width: 30px;
                 height: 30px;
               }
+
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                width: 35px;
+                height: 30px;
+              }
+
               i {
                 color: white;
+cursor: pointer;
                 width: 100%;
+
+                // Medium devices (769px - 1200px)
+                @include m.medium {
+                  font-size: 14px;
+                }
               }
             }
           }
+
           .all-icons {
             margin-top: 48px;
+
+            padding: 2px;
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              margin-top: 35px;
+            }
+            img {
+              cursor: pointer;
+              width: 25px;
+              @include m.medium {
+                font-size: 20px;
+              }
+            }
             i {
+              cursor: pointer;
               font-size: 24px;
+              color: #494949;
+              // Medium devices (769px - 1200px)
+              @include m.medium {
+                font-size: 20px;
+              }
             }
           }
         }
       }
+
       .footer-bottom {
         margin-top: 109px;
+
         @include m.mobile {
           margin-top: 100px;
         }
+
+        // Medium devices (769px - 1200px)
+        @include m.medium {
+          margin-top: 80px;
+        }
+
         .footer-title {
           h5 {
             color: #494949;
-
             font-family: Manrope;
             font-size: 16px;
             font-weight: 400;
             line-height: 100%;
             letter-spacing: 0%;
-            text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
+            text-align: center;
             width: 297px;
             height: 22px;
+
             @include m.mobile {
               font-family: Manrope;
               font-size: 0.8rem;
               font-weight: 500;
               line-height: 100%;
               letter-spacing: 0%;
-              text-align: center; /* © 2027 UIDesign.to - All rights reserved. */
+              text-align: center;
               width: 297px;
               height: 22px;
+            }
+
+            // Medium devices (769px - 1200px)
+            @include m.medium {
+              font-size: 14px;
+              width: 100%;
+              max-width: 297px;
             }
           }
         }

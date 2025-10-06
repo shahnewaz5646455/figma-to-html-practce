@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
   gap: v.$spacing-xl;
 
   // Mobile styles
@@ -24,6 +25,12 @@
     width: 90%;
     height: auto;
     gap: v.$spacing-lg;
+  }
+  // 769px and 1200px
+  @include m.medium{
+    
+    flex-direction: column;
+    height: auto;
   }
 
   // Large styles
@@ -51,6 +58,11 @@
       width: 100%;
       max-width: 31.625rem; // 506px
       height: 32.5625rem; // 521px
+    }
+    @include m.medium{
+      width: 100%;
+      max-width: 35.625rem;
+      height: 32.5625rem; 
     }
 
     // Large styles
@@ -122,6 +134,7 @@
 
   .info {
     font-family: "Manrope", sans-serif;
+    
 
     // Mobile styles
     @include m.mobile {
@@ -136,6 +149,11 @@
       height: auto;
       max-width: 36.375rem; // 582px
     }
+    @include m.medium{
+       width: 100%;
+      height: auto;
+      max-width: 36.375rem; // 582px
+    }
 
     // Large styles
     @include m.large {
@@ -147,6 +165,7 @@
     .info-title {
       color: v.$primary-color;
       font-weight: 800;
+      
       margin-bottom: v.$spacing-md;
 
       // Mobile styles
@@ -216,6 +235,12 @@
         font-size: 1.125rem; // 18px
         width: auto;
         height: auto;
+      }
+      @include m.medium{
+        font-size: 1.125rem; // 18px
+        width: auto;
+        height: auto;
+        
       }
 
       @include m.large {

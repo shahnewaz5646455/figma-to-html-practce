@@ -1,7 +1,8 @@
 // Variables
 $breakpoint-mobile: 320px;
 $breakpoint-tablet: 426px;
-$breakpoint-large: 769px;
+$breakpoint-medium: 769px;
+$breakpoint-large: 1200px;
 
 $base-font-size: 16px; // Base for rem conversion
 
@@ -31,8 +32,16 @@ $paragraph-large: 1rem;       // 16px
   }
 }
 
+// Tablet breakpoint (426px to 768px)
 @mixin tablet {
-  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-large - 1px}) {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-medium - 1px}) {
+    @content;
+  }
+}
+
+// Medium breakpoint (769px and 1200px)
+@mixin medium {
+  @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large - 1px}) {
     @content;
   }
 }
@@ -67,6 +76,12 @@ $paragraph-large: 1rem;       // 16px
         max-width: 80%;
       }
 
+      // Medium devices (769px - 1200px)
+      @include medium {
+        max-width: 85%;
+        
+      }
+
       @include large {
         max-width: 70%;
       }
@@ -88,6 +103,12 @@ $paragraph-large: 1rem;       // 16px
           white-space: nowrap;
         }
         
+        // Medium devices (769px - 1200px)
+        @include medium {
+          font-size: 2.5rem; // 40px
+          white-space: nowrap;
+        }
+        
         @include large {
           font-size: $h1-large;
           white-space: nowrap;
@@ -106,6 +127,17 @@ $paragraph-large: 1rem;       // 16px
         
         @include tablet {
           font-size: $paragraph-tablet;
+        }
+        
+        // Medium devices (769px - 1200px)
+        @include medium {
+          font-size: 1rem; // 16px
+          max-width: 50rem; // 800px
+          margin: 0 auto;
+          
+          br {
+            display: block;
+          }
         }
         
         @include large {
@@ -133,6 +165,14 @@ $paragraph-large: 1rem;       // 16px
       grid-template-columns: repeat(2, 1fr);
     }
     
+    // Medium devices (769px - 1200px)
+    @include medium {
+      max-width: 45rem; // 1140px
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; // 32px
+      
+    }
+    
     @include large {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -143,6 +183,7 @@ $paragraph-large: 1rem;       // 16px
       padding: 1.25rem; // 20px
       text-align: center;
       transition: transform 0.3s ease;
+    
       
       @include mobile {
         width: 100%;
@@ -154,6 +195,15 @@ $paragraph-large: 1rem;       // 16px
       @include tablet {
         width: 100%;
         height: 24.4375rem; // 391px
+      }
+      
+      // Medium devices (769px - 1200px)
+      @include medium {
+        width: 100%;
+        
+        max-width: 20rem; // 320px
+        height: 26rem; // 416px
+        margin: 0 auto;
       }
       
       @include large {
@@ -170,6 +220,13 @@ $paragraph-large: 1rem;       // 16px
         width: 8.4375rem; // 135px
         height: 13.25rem; // 212px
         
+        // Medium devices (769px - 1200px)
+        @include medium {
+          width: 7.5rem; // 120px
+          height: 11.25rem; // 180px
+          margin: 1.5rem auto 1rem; // 24px auto 16px
+        }
+        
         img {
           width: 100%;
           height: 100%;
@@ -179,6 +236,11 @@ $paragraph-large: 1rem;       // 16px
 
       .info {
         margin-top: 1.875rem; // 30px
+        
+        // Medium devices (769px - 1200px)
+        @include medium {
+          margin-top: 1.5rem; // 24px
+        }
         
         h2 {
           color: $primary-text;
@@ -193,6 +255,11 @@ $paragraph-large: 1rem;       // 16px
           
           @include tablet {
             font-size: $h2-tablet;
+          }
+          
+          // Medium devices (769px - 1200px)
+          @include medium {
+            font-size: 1.5rem; // 24px
           }
           
           @include large {
@@ -214,6 +281,11 @@ $paragraph-large: 1rem;       // 16px
             font-size: $paragraph-tablet;
           }
           
+          // Medium devices (769px - 1200px)
+          @include medium {
+            font-size: 0.9375rem; // 15px
+          }
+          
           @include large {
             font-size: $paragraph-large;
           }
@@ -229,7 +301,7 @@ $paragraph-large: 1rem;       // 16px
     .cards {
       padding: 0.625rem; // 10px
       
-      .card {
+      .card-custom {
         margin-bottom: 1rem; // 16px
         
         &:last-child {
@@ -245,10 +317,25 @@ $paragraph-large: 1rem;       // 16px
     .cards {
       gap: 1rem; // 16px
       
-      .card {
+      .card-custom {
         .info {
           h2 {
             margin-bottom: 0.5rem; // 8px
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium device specific adjustments
+@include medium {
+  .product-section {
+    .cards {
+      .card-custom {
+        .info {
+          h2 {
+            margin-bottom: 0.75rem; // 12px
           }
         }
       }
