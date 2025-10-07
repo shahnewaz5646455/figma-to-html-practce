@@ -50,6 +50,7 @@ footer {
 
     .container {
       .footer-top {
+        
         @include m.tablet {
           margin-top: 40px;
           display: flex;
@@ -78,6 +79,7 @@ footer {
 
         .logo-container {
           width: 50px;
+          
 
           .footer-logo {
             width: 62px;
@@ -133,7 +135,7 @@ footer {
             height: 40px;
 
             @include m.tablet {
-              margin-right: 0;
+              margin-right: -20px;
               font-size: 18px;
             }
 
@@ -159,7 +161,7 @@ footer {
           button {
             color: white;
             overflow: hidden;
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease;
             z-index: 1;
             transition: 1.6s all ease;
             font-weight: 500;
@@ -175,13 +177,15 @@ footer {
               rgba(255, 0, 0, 1),
               rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
             );
-            
 
             @include m.tablet {
-              width: 170px;
+              width: 150px;
+              text-align: center;
               height: 40px;
-              font-size: 12px;
-              font-weight: 600;
+              font-size: 10px;
+              padding: 0;
+              margin-left: 20px;
+              font-weight: 500;
               white-space: nowrap;
             }
 
@@ -201,31 +205,30 @@ footer {
             }
           }
           button::after {
-               background: linear-gradient(
+            background: linear-gradient(
               270deg,
               rgba(255, 137.00003051757812, 55.999996185302734, 1),
               rgb(255, 3, 3) 100%
             );
-              content: "";
-              position: absolute;
-              width: 100%;
-              top: 0;
-              left: 0;
-              z-index: -1;
-              height: 100%;
-              transform: translateX(100%);
-              transition: 1.5s all ease;
-            }
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            height: 100%;
+            transform: translateX(100%);
+            transition: 1.5s all ease;
+          }
 
-            button:hover::after {
-              transform: translateX(0%);
-              
-            }
-            button:hover{
-              color: black;
-              font-weight: 600;
-              transform: scale(1.1); 
-            }
+          button:hover::after {
+            transform: translateX(0%);
+          }
+          button:hover {
+            color: black;
+            font-weight: 600;
+            transform: scale(1.1);
+          }
         }
       }
 
@@ -314,6 +317,9 @@ footer {
                 margin-top: 14px;
               }
             }
+            li:hover{
+              color:rgb(35, 141, 255);
+            }
           }
         }
 
@@ -368,6 +374,9 @@ footer {
                 font-size: 14px;
                 margin-top: 14px;
               }
+            }
+             li:hover{
+              color:rgb(35, 141, 255);
             }
           }
         }
@@ -461,7 +470,8 @@ footer {
               height: 41px;
               width: 100%;
               border: none;
-              padding-bottom: 23px;
+              outline: none;
+              padding: 23px 23px 23px 0px;
               background: transparent;
               border-bottom: 2px solid #494949;
 
@@ -491,7 +501,7 @@ footer {
             }
 
             .input-icon {
-              width: 45px;
+              width: 48px;
               height: 40px;
               border-radius: 50%;
               background: linear-gradient(
@@ -499,6 +509,10 @@ footer {
                 rgba(255, 0, 0, 1),
                 rgba(255, 137.00003051757812, 55.999996185302734, 1) 100%
               );
+              @include m.tablet{
+                 width: 30px;
+                height: 30px;
+              }
 
               @include m.mobile {
                 width: 30px;
@@ -513,7 +527,7 @@ footer {
 
               i {
                 color: white;
-cursor: pointer;
+                cursor: pointer;
                 width: 100%;
 
                 // Medium devices (769px - 1200px)
@@ -547,6 +561,9 @@ cursor: pointer;
               @include m.medium {
                 font-size: 20px;
               }
+            }
+            i:hover{
+              color: rgb(22, 106, 242);
             }
           }
         }
