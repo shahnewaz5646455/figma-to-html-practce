@@ -548,10 +548,14 @@ footer {
             }
             img {
               cursor: pointer;
-              width: 25px;
+              width: 30px;
+              margin-top: -2px;
               @include m.medium {
-                font-size: 20px;
+                width: 20px;
               }
+            }
+            img:hover{
+              filter: invert(42%) sepia(96%) saturate(1534%) hue-rotate(180deg) brightness(95%) contrast(90%);
             }
             i {
               cursor: pointer;
