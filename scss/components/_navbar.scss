@@ -1,0 +1,266 @@
+// Variables
+$primary-color: #8B4513;
+$secondary-color: #D2691E;
+$accent-color: #A0522D;
+$text-color: #333;
+$light-color: #FFF8F0;
+$dark-color: #5D4037;
+$shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+$transition: all 0.3s ease;
+$border-radius: 8px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-position($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin hover-effect {
+  transition: $transition;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
+  }
+}
+
+// Base Navbar Styles
+nav {
+  padding: 15px 0;
+ 
+  max-width: 1260px;
+  width: 95.238%;
+  background: linear-gradient(135deg, $light-color 0%, #f4f4f4 100%);
+  
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: $shadow;
+  
+  .logo {
+    margin-left: 20px;
+    
+    h2 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      color: $primary-color;
+      margin: 0;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+  }
+  
+  .navlinks {
+    max-width: 600px;
+    width: 91.67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    ul {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      
+      > li {
+        font-family: "Manrope", sans-serif;
+        list-style: none;
+        padding: 12px 18px;
+        font-weight: 600;
+        position: relative;
+        border-radius: $border-radius;
+        background: transparent;
+        transition: $transition;
+        
+        > a {
+          color: $text-color;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 0.95rem;
+          
+          &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: $primary-color;
+            position: absolute;
+            bottom: 8px;
+            left: 18px;
+            transition: width 0.3s ease;
+          }
+        }
+        
+        // Hover effect for main menu items
+        &:hover {
+          background: rgba(139, 69, 19, 0.1);
+          
+          > a::after {
+            width: calc(100% - 36px);
+          }
+          
+          // Show dropdown on hover
+          > .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+        
+        // First Level Dropdown - Single Column
+        .dropdown {
+          @include absolute-position(140%, auto, auto, 0);
+          background: white;
+          min-width: 220px;
+          border-radius: $border-radius;
+          box-shadow: $shadow;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: $transition;
+          z-index: 1000;
+          padding: 8px 0;
+          border: 1px solid rgba(139, 69, 19, 0.1);
+          display: flex;
+          flex-direction: column; // Single column layout
+          
+          li {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            box-shadow: none;
+            border-radius: 0;
+            width: 100%; // Full width for single column
+            
+            a {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 12px 20px;
+              color: $text-color;
+              text-decoration: none;
+              transition: $transition;
+              border-left: 3px solid transparent;
+              width: 100%; // Full width links
+              
+              &:hover {
+                background: rgba(139, 69, 19, 0.08);
+                border-left-color: $primary-color;
+                padding-left: 25px;
+              }
+            }
+            
+            // Nested dropdown indicator
+            &.has-nested {
+              position: relative;
+              
+              > a::after {
+                content: '';
+                font-size: 1.2rem;
+                color: $secondary-color;
+                transition: $transition;
+                margin-left: auto;
+                padding-left: 10px;
+              }
+              
+              &:hover > a::after {
+                transform: translateX(3px);
+                color: $primary-color;
+              }
+              
+              // Show nested dropdown on hover
+              &:hover .nested-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+              }
+            }
+            
+            // Second Level Dropdown (Nested) - Single Column
+            .nested-dropdown {
+              @include absolute-position(0, auto, auto, 102%);
+              background: white;
+              min-width: 200px;
+              border-radius: $border-radius;
+              box-shadow: $shadow;
+              opacity: 0;
+              visibility: hidden;
+              transform: translateX(-10px);
+              transition: $transition;
+              z-index: 1001;
+              padding: 8px 0;
+              border: 1px solid rgba(139, 69, 19, 0.1);
+              display: flex;
+              flex-direction: column; // Single column layout
+              
+              li {
+                width: 100%; // Full width for single column
+                
+                a {
+                  padding: 10px 20px;
+                  border-left: 3px solid transparent;
+                  width: 100%; // Full width links
+                  
+                  &:hover {
+                    background: rgba(139, 69, 19, 0.08);
+                    border-left-color: $secondary-color;
+                    padding-left: 25px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// Animation for dropdown items
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown li {
+  animation: slideIn 0.3s ease forwards;
+  
+  &:nth-child(1) { animation-delay: 0.05s; }
+  &:nth-child(2) { animation-delay: 0.1s; }
+  &:nth-child(3) { animation-delay: 0.15s; }
+  &:nth-child(4) { animation-delay: 0.2s; }
+}
+
+// Ensure no horizontal layout
+.dropdown,
+.nested-dropdown {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  
+  li {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
