@@ -1,4 +1,5 @@
 // Variables
+@use "../utils/mixins" as m;
 $primary-color: #8B4513;
 $secondary-color: #D2691E;
 $accent-color: #A0522D;
@@ -42,6 +43,8 @@ nav {
   
   border-radius: $border-radius;
   display: flex;
+  
+
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
@@ -119,6 +122,13 @@ nav {
             visibility: visible;
             transform: translateY(0);
           }
+          
+          // Show mega menu on hover for Products
+          > .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
         }
         
         // First Level Dropdown - Single Column
@@ -129,6 +139,7 @@ nav {
           border-radius: $border-radius;
           box-shadow: $shadow;
           opacity: 0;
+         
           visibility: hidden;
           transform: translateY(-10px);
           transition: $transition;
@@ -206,7 +217,9 @@ nav {
               border: 1px solid rgba(139, 69, 19, 0.1);
               display: flex;
               flex-direction: column; // Single column layout
-              
+              @include m.tablet{
+            @include absolute-position(0, auto, auto, -102%);
+          }
               li {
                 width: 100%; // Full width for single column
                 
@@ -225,12 +238,131 @@ nav {
             }
           }
         }
+        
+        // Mega Menu for Products
+        .mega-menu {
+          @include absolute-position(140%, auto, auto, -480%);
+          transform: translateX(-50%) translateY(-10px);
+          background: white;
+          width: 600px;
+          border-radius: $border-radius;
+          box-shadow: $shadow;
+          opacity: 0;
+          visibility: hidden;
+          transition: $transition;
+          z-index: 1000;
+          padding: 25px;
+          border: 1px solid rgba(139, 69, 19, 0.1);
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 25px;
+          @include m.tablet{
+             @include absolute-position(140%, auto, auto, -380%);
+          }
+          .mega-menu-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            h3 {
+              font-family: "Manrope", sans-serif;
+              font-weight: 700;
+              color: $primary-color;
+              margin: 0 0 10px 0;
+              font-size: 1rem;
+              padding-bottom: 8px;
+              border-bottom: 2px solid rgba(139, 69, 19, 0.2);
+            }
+            
+            .mega-menu-links {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              
+              a {
+                color: $text-color;
+                text-decoration: none;
+                padding: 8px 12px;
+                border-radius: 4px;
+                transition: $transition;
+                border-left: 3px solid transparent;
+                font-weight: 500;
+                
+                &:hover {
+                  background: rgba(139, 69, 19, 0.08);
+                  border-left-color: $secondary-color;
+                  padding-left: 15px;
+                  transform: translateX(5px);
+                }
+                
+                i {
+                  margin-right: 8px;
+                  color: $accent-color;
+                  width: 16px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+          
+          .mega-menu-featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(210, 105, 30, 0.05) 100%);
+            border-radius: $border-radius;
+            padding: 20px;
+            margin-top: 10px;
+            
+            h4 {
+              font-family: "Manrope", sans-serif;
+              font-weight: 700;
+              color: $dark-color;
+              margin: 0 0 15px 0;
+              text-align: center;
+            }
+            
+            .featured-products {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 15px;
+              
+              .featured-product {
+                text-align: center;
+                padding: 15px;
+                background: white;
+                border-radius: $border-radius;
+                transition: $transition;
+                border: 1px solid rgba(139, 69, 19, 0.1);
+                
+                &:hover {
+                  transform: translateY(-3px);
+                  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+                }
+                
+                .product-icon {
+                  font-size: 2rem;
+                  color: $primary-color;
+                  margin-bottom: 10px;
+                }
+                
+                .product-name {
+                  font-weight: 600;
+                  color: $text-color;
+                  margin-bottom: 5px;
+                }
+                
+                .product-price {
+                  font-weight: 700;
+                  color: $secondary-color;
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
-
-
 
 // Animation for dropdown items
 @keyframes slideIn {

@@ -2388,6 +2388,11 @@ nav .navlinks ul > li:hover > .dropdown {
   visibility: visible;
   transform: translateY(0);
 }
+nav .navlinks ul > li:hover > .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 nav .navlinks ul > li .dropdown {
   position: absolute;
   top: 140%;
@@ -2472,6 +2477,15 @@ nav .navlinks ul > li .dropdown li .nested-dropdown {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 426px) and (max-width: 768px) {
+  nav .navlinks ul > li .dropdown li .nested-dropdown {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: -102%;
+  }
+}
 nav .navlinks ul > li .dropdown li .nested-dropdown li {
   width: 100%;
 }
@@ -2484,6 +2498,122 @@ nav .navlinks ul > li .dropdown li .nested-dropdown li a:hover {
   background: rgba(139, 69, 19, 0.08);
   border-left-color: #D2691E;
   padding-left: 25px;
+}
+nav .navlinks ul > li .mega-menu {
+  position: absolute;
+  top: 140%;
+  right: auto;
+  bottom: auto;
+  left: -480%;
+  transform: translateX(-50%) translateY(-10px);
+  background: white;
+  width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 25px;
+  border: 1px solid rgba(139, 69, 19, 0.1);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  nav .navlinks ul > li .mega-menu {
+    position: absolute;
+    top: 140%;
+    right: auto;
+    bottom: auto;
+    left: -380%;
+  }
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column h3 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #8B4513;
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(139, 69, 19, 0.2);
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  font-weight: 500;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a:hover {
+  background: rgba(139, 69, 19, 0.08);
+  border-left-color: #D2691E;
+  padding-left: 15px;
+  transform: translateX(5px);
+}
+nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a i {
+  margin-right: 8px;
+  color: #A0522D;
+  width: 16px;
+  text-align: center;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured {
+  grid-column: 1/-1;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(210, 105, 30, 0.05) 100%);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #5D4037;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product {
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 69, 19, 0.1);
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-icon {
+  font-size: 2rem;
+  color: #8B4513;
+  margin-bottom: 10px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-price {
+  font-weight: 700;
+  color: #D2691E;
+  font-size: 0.9rem;
 }
 
 @keyframes slideIn {
