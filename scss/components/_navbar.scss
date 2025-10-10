@@ -1,11 +1,11 @@
 // Variables
 @use "../utils/mixins" as m;
-$primary-color: #8B4513;
-$secondary-color: #D2691E;
-$accent-color: #A0522D;
+$primary-color: #8b4513;
+$secondary-color: #d2691e;
+$accent-color: #a0522d;
 $text-color: #333;
-$light-color: #FFF8F0;
-$dark-color: #5D4037;
+$light-color: #fff8f0;
+$dark-color: #5d4037;
 $shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
 $transition: all 0.3s ease;
 $border-radius: 8px;
@@ -36,40 +36,46 @@ $border-radius: 8px;
 // Base Navbar Styles
 nav {
   padding: 15px 0;
- 
+
   max-width: 1260px;
+
   width: 95.238%;
   background: linear-gradient(135deg, $light-color 0%, #f4f4f4 100%);
-  
+
   border-radius: $border-radius;
   display: flex;
-  
 
   justify-content: space-between;
   margin: 0 auto;
   align-items: center;
   box-shadow: $shadow;
-  
+
   .logo {
     margin-left: 20px;
-    
+
     h2 {
       font-family: "Manrope", sans-serif;
       font-weight: 800;
       color: $primary-color;
       margin: 0;
       font-size: 1.8rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
   }
-  
+
   .navlinks {
     max-width: 600px;
+
     width: 91.67%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    @include m.mobile {
+      display: none;
+    }
+    @include m.tablet {
+      display: none;
+    }
     ul {
       display: flex;
       width: 100%;
@@ -77,7 +83,7 @@ nav {
       align-items: center;
       margin: 0;
       padding: 0;
-      
+
       > li {
         font-family: "Manrope", sans-serif;
         list-style: none;
@@ -87,7 +93,7 @@ nav {
         border-radius: $border-radius;
         background: transparent;
         transition: $transition;
-        
+
         > a {
           color: $text-color;
           text-decoration: none;
@@ -95,9 +101,9 @@ nav {
           align-items: center;
           gap: 8px;
           font-size: 0.95rem;
-          
+
           &::after {
-            content: '';
+            content: "";
             width: 0;
             height: 2px;
             background: $primary-color;
@@ -107,22 +113,22 @@ nav {
             transition: width 0.3s ease;
           }
         }
-        
+
         // Hover effect for main menu items
         &:hover {
           background: rgba(139, 69, 19, 0.1);
-          
+
           > a::after {
             width: calc(100% - 36px);
           }
-          
+
           // Show dropdown on hover
           > .dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
           }
-          
+
           // Show mega menu on hover for Products
           > .mega-menu {
             opacity: 1;
@@ -130,7 +136,7 @@ nav {
             transform: translateY(0);
           }
         }
-        
+
         // First Level Dropdown - Single Column
         .dropdown {
           @include absolute-position(140%, auto, auto, 0);
@@ -139,7 +145,7 @@ nav {
           border-radius: $border-radius;
           box-shadow: $shadow;
           opacity: 0;
-         
+
           visibility: hidden;
           transform: translateY(-10px);
           transition: $transition;
@@ -148,7 +154,7 @@ nav {
           border: 1px solid rgba(139, 69, 19, 0.1);
           display: flex;
           flex-direction: column; // Single column layout
-          
+
           li {
             padding: 0;
             margin: 0;
@@ -156,7 +162,7 @@ nav {
             box-shadow: none;
             border-radius: 0;
             width: 100%; // Full width for single column
-            
+
             a {
               display: flex;
               justify-content: space-between;
@@ -167,32 +173,32 @@ nav {
               transition: $transition;
               border-left: 3px solid transparent;
               width: 100%; // Full width links
-              
+
               &:hover {
                 background: rgba(139, 69, 19, 0.08);
                 border-left-color: $primary-color;
                 padding-left: 25px;
               }
             }
-            
+
             // Nested dropdown indicator
             &.has-nested {
               position: relative;
-              
+
               > a::after {
-                content: '';
+                content: "";
                 font-size: 1.2rem;
                 color: $secondary-color;
                 transition: $transition;
                 margin-left: auto;
                 padding-left: 10px;
               }
-              
+
               &:hover > a::after {
                 transform: translateX(3px);
                 color: $primary-color;
               }
-              
+
               // Show nested dropdown on hover
               &:hover .nested-dropdown {
                 opacity: 1;
@@ -200,7 +206,7 @@ nav {
                 transform: translateX(0);
               }
             }
-            
+
             // Second Level Dropdown (Nested) - Single Column
             .nested-dropdown {
               @include absolute-position(0, auto, auto, 102%);
@@ -217,17 +223,17 @@ nav {
               border: 1px solid rgba(139, 69, 19, 0.1);
               display: flex;
               flex-direction: column; // Single column layout
-              @include m.tablet{
-            @include absolute-position(0, auto, auto, -102%);
-          }
+              @include m.tablet {
+                @include absolute-position(0, auto, auto, -102%);
+              }
               li {
                 width: 100%; // Full width for single column
-                
+
                 a {
                   padding: 10px 20px;
                   border-left: 3px solid transparent;
                   width: 100%; // Full width links
-                  
+
                   &:hover {
                     background: rgba(139, 69, 19, 0.08);
                     border-left-color: $secondary-color;
@@ -238,7 +244,7 @@ nav {
             }
           }
         }
-        
+
         // Mega Menu for Products
         .mega-menu {
           @include absolute-position(140%, auto, auto, -480%);
@@ -256,14 +262,14 @@ nav {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 25px;
-          @include m.tablet{
-             @include absolute-position(140%, auto, auto, -380%);
+          @include m.tablet {
+            @include absolute-position(140%, auto, auto, -380%);
           }
           .mega-menu-column {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            
+
             h3 {
               font-family: "Manrope", sans-serif;
               font-weight: 700;
@@ -273,12 +279,12 @@ nav {
               padding-bottom: 8px;
               border-bottom: 2px solid rgba(139, 69, 19, 0.2);
             }
-            
+
             .mega-menu-links {
               display: flex;
               flex-direction: column;
               gap: 8px;
-              
+
               a {
                 color: $text-color;
                 text-decoration: none;
@@ -287,14 +293,14 @@ nav {
                 transition: $transition;
                 border-left: 3px solid transparent;
                 font-weight: 500;
-                
+
                 &:hover {
                   background: rgba(139, 69, 19, 0.08);
                   border-left-color: $secondary-color;
                   padding-left: 15px;
                   transform: translateX(5px);
                 }
-                
+
                 i {
                   margin-right: 8px;
                   color: $accent-color;
@@ -304,14 +310,18 @@ nav {
               }
             }
           }
-          
+
           .mega-menu-featured {
             grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(210, 105, 30, 0.05) 100%);
+            background: linear-gradient(
+              135deg,
+              rgba(139, 69, 19, 0.05) 0%,
+              rgba(210, 105, 30, 0.05) 100%
+            );
             border-radius: $border-radius;
             padding: 20px;
             margin-top: 10px;
-            
+
             h4 {
               font-family: "Manrope", sans-serif;
               font-weight: 700;
@@ -319,12 +329,12 @@ nav {
               margin: 0 0 15px 0;
               text-align: center;
             }
-            
+
             .featured-products {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               gap: 15px;
-              
+
               .featured-product {
                 text-align: center;
                 padding: 15px;
@@ -332,24 +342,24 @@ nav {
                 border-radius: $border-radius;
                 transition: $transition;
                 border: 1px solid rgba(139, 69, 19, 0.1);
-                
+
                 &:hover {
                   transform: translateY(-3px);
                   box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
                 }
-                
+
                 .product-icon {
                   font-size: 2rem;
                   color: $primary-color;
                   margin-bottom: 10px;
                 }
-                
+
                 .product-name {
                   font-weight: 600;
                   color: $text-color;
                   margin-bottom: 5px;
                 }
-                
+
                 .product-price {
                   font-weight: 700;
                   color: $secondary-color;
@@ -360,6 +370,39 @@ nav {
           }
         }
       }
+    }
+  }
+
+  .menubar {
+    @include m.large {
+      display: none;
+    }
+    @include m.medium {
+      display: none;
+    }
+   
+    .offcanvas {
+      width: 100% !important;
+      max-width: 100% !important;
+      right: 0; // keep it anchored to the right
+      @include m.tablet{
+        width: 60% !important;
+      }
+
+      @include m.mobile {
+        width: 90%  !important;
+      }
+.offcanvas-body{
+  ul{
+    li{
+      color: black;
+    }
+    li:hover{
+      color: blue;
+    }
+  }
+}
+     
     }
   }
 }
@@ -378,11 +421,19 @@ nav {
 
 .dropdown li {
   animation: slideIn 0.3s ease forwards;
-  
-  &:nth-child(1) { animation-delay: 0.05s; }
-  &:nth-child(2) { animation-delay: 0.1s; }
-  &:nth-child(3) { animation-delay: 0.15s; }
-  &:nth-child(4) { animation-delay: 0.2s; }
+
+  &:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.2s;
+  }
 }
 
 // Ensure no horizontal layout
@@ -390,7 +441,7 @@ nav {
 .nested-dropdown {
   flex-wrap: nowrap;
   white-space: nowrap;
-  
+
   li {
     flex: 0 0 auto;
     width: 100%;

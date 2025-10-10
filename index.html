@@ -29,6 +29,8 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="">
   </head>
   <body>
     <header>
@@ -130,6 +132,79 @@
           </li>
           <li><a href="#">Contact</a></li>
         </ul>
+      </div>
+      <div class="menubar">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+ <i class="fa-solid fa-bars"></i>
+</button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   <ul class="navbar-nav justify-content-end flex-grow-1">
+    <li class="nav-item"><a class="nav-link fw-bold" href="#">Home</a></li>
+    <li class="nav-item services dropdown">
+  <a class="nav-link  dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Services
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item fw-bold" href="#web">Web Design</a></li>
+    
+    <!-- Nested dropdown using dropend -->
+    <li class="nav-item  dropend">
+      <a class=" dropdown-item  fw-bold dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="event.stopPropagation()">
+        Development
+      </a>
+      <ul class="dropdown-menu development-dropdown">
+        <li><a class="dropdown-item fw-bold" href="#frontend">Frontend</a></li>
+        <li><a class="dropdown-item fw-bold" href="#backend">Backend</a></li>
+        <li><a class="dropdown-item fw-bold" href="#fullstack">Full Stack</a></li>
+        <li><a class="dropdown-item fw-bold" href="#saas">Saas Software</a></li>
+        <li><a class="dropdown-item fw-bold" href="#uiux">UI/UX Design</a></li>
+        <li><a class="dropdown-item fw-bold" href="#appdev">App Developer</a></li>
+      </ul>
+    </li>
+    
+    <li><a class="dropdown-item fw-bold" href="#seo">SEO</a></li>
+    <li><a class="dropdown-item fw-bold" href="#marketing">Marketing</a></li>
+  </ul>
+</li>
+     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <div class="dropdown-menu p-3  mb-mega-menu" >
+            <div class="row">
+              <div class="col-12">
+                <h6 class="dropdown-header">Coffee Beans</h6>
+                <a class="dropdown-item" href="#arabica"><i class="fas fa-coffee me-2"></i>Arabica</a>
+                <a class="dropdown-item" href="#robusta"><i class="fas fa-mug-hot me-2"></i>Robusta</a>
+                <a class="dropdown-item" href="#blends"><i class="fas fa-blender me-2"></i>Blends</a>
+                <a class="dropdown-item" href="#organic"><i class="fas fa-leaf me-2"></i>Organic</a>
+                
+                <h6 class="dropdown-header mt-2">Brewing Equipment</h6>
+                <a class="dropdown-item" href="#espresso"><i class="fas fa-coffee me-2"></i>Espresso Machines</a>
+                <a class="dropdown-item" href="#french"><i class="fas fa-filter me-2"></i>French Press</a>
+                <a class="dropdown-item" href="#pour-over"><i class="fas fa-tint me-2"></i>Pour Over</a>
+                <a class="dropdown-item" href="#grinders"><i class="fas fa-cog me-2"></i>Grinders</a>
+                
+                <h6 class="dropdown-header mt-2">Accessories</h6>
+                <a class="dropdown-item" href="#mugs"><i class="fas fa-mug-hot me-2"></i>Mugs & Cups</a>
+                <a class="dropdown-item" href="#thermals"><i class="fas fa-thermometer-half me-2"></i>Thermal Cups</a>
+                <a class="dropdown-item" href="#filters"><i class="fas fa-filter me-2"></i>Filters</a>
+                <a class="dropdown-item" href="#cleaning"><i class="fas fa-broom me-2"></i>Cleaning Kits</a>
+              </div>
+            </div>
+          </div>
+        </li>
+    <li class="nav-item"><a class="nav-link fw-bold" href="#">Contact</a></li>
+   </ul>
+    
+    
+  </div>
+</div>
       </div>
     </nav>
 
@@ -483,5 +558,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="src/index.js"></script>
   </body>
 </html>

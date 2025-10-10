@@ -2315,7 +2315,7 @@ nav {
   padding: 15px 0;
   max-width: 1260px;
   width: 95.238%;
-  background: linear-gradient(135deg, #FFF8F0 0%, #f4f4f4 100%);
+  background: linear-gradient(135deg, #fff8f0 0%, #f4f4f4 100%);
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -2329,7 +2329,7 @@ nav .logo {
 nav .logo h2 {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #8B4513;
+  color: #8b4513;
   margin: 0;
   font-size: 1.8rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -2340,6 +2340,16 @@ nav .navlinks {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  nav .navlinks {
+    display: none;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  nav .navlinks {
+    display: none;
+  }
 }
 nav .navlinks ul {
   display: flex;
@@ -2371,7 +2381,7 @@ nav .navlinks ul > li > a::after {
   content: "";
   width: 0;
   height: 2px;
-  background: #8B4513;
+  background: #8b4513;
   position: absolute;
   bottom: 8px;
   left: 18px;
@@ -2434,7 +2444,7 @@ nav .navlinks ul > li .dropdown li a {
 }
 nav .navlinks ul > li .dropdown li a:hover {
   background: rgba(139, 69, 19, 0.08);
-  border-left-color: #8B4513;
+  border-left-color: #8b4513;
   padding-left: 25px;
 }
 nav .navlinks ul > li .dropdown li.has-nested {
@@ -2443,14 +2453,14 @@ nav .navlinks ul > li .dropdown li.has-nested {
 nav .navlinks ul > li .dropdown li.has-nested > a::after {
   content: "";
   font-size: 1.2rem;
-  color: #D2691E;
+  color: #d2691e;
   transition: all 0.3s ease;
   margin-left: auto;
   padding-left: 10px;
 }
 nav .navlinks ul > li .dropdown li.has-nested:hover > a::after {
   transform: translateX(3px);
-  color: #8B4513;
+  color: #8b4513;
 }
 nav .navlinks ul > li .dropdown li.has-nested:hover .nested-dropdown {
   opacity: 1;
@@ -2496,7 +2506,7 @@ nav .navlinks ul > li .dropdown li .nested-dropdown li a {
 }
 nav .navlinks ul > li .dropdown li .nested-dropdown li a:hover {
   background: rgba(139, 69, 19, 0.08);
-  border-left-color: #D2691E;
+  border-left-color: #d2691e;
   padding-left: 25px;
 }
 nav .navlinks ul > li .mega-menu {
@@ -2537,7 +2547,7 @@ nav .navlinks ul > li .mega-menu .mega-menu-column {
 nav .navlinks ul > li .mega-menu .mega-menu-column h3 {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
-  color: #8B4513;
+  color: #8b4513;
   margin: 0 0 10px 0;
   font-size: 1rem;
   padding-bottom: 8px;
@@ -2559,13 +2569,13 @@ nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a {
 }
 nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a:hover {
   background: rgba(139, 69, 19, 0.08);
-  border-left-color: #D2691E;
+  border-left-color: #d2691e;
   padding-left: 15px;
   transform: translateX(5px);
 }
 nav .navlinks ul > li .mega-menu .mega-menu-column .mega-menu-links a i {
   margin-right: 8px;
-  color: #A0522D;
+  color: #a0522d;
   width: 16px;
   text-align: center;
 }
@@ -2579,7 +2589,7 @@ nav .navlinks ul > li .mega-menu .mega-menu-featured {
 nav .navlinks ul > li .mega-menu .mega-menu-featured h4 {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
-  color: #5D4037;
+  color: #5d4037;
   margin: 0 0 15px 0;
   text-align: center;
 }
@@ -2602,7 +2612,7 @@ nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .feature
 }
 nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-icon {
   font-size: 2rem;
-  color: #8B4513;
+  color: #8b4513;
   margin-bottom: 10px;
 }
 nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-name {
@@ -2612,8 +2622,39 @@ nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .feature
 }
 nav .navlinks ul > li .mega-menu .mega-menu-featured .featured-products .featured-product .product-price {
   font-weight: 700;
-  color: #D2691E;
+  color: #d2691e;
   font-size: 0.9rem;
+}
+@media (min-width: 1200px) {
+  nav .menubar {
+    display: none;
+  }
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+  nav .menubar {
+    display: none;
+  }
+}
+nav .menubar .offcanvas {
+  width: 100% !important;
+  max-width: 100% !important;
+  right: 0;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  nav .menubar .offcanvas {
+    width: 60% !important;
+  }
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  nav .menubar .offcanvas {
+    width: 90% !important;
+  }
+}
+nav .menubar .offcanvas .offcanvas-body ul li {
+  color: black;
+}
+nav .menubar .offcanvas .offcanvas-body ul li:hover {
+  color: blue;
 }
 
 @keyframes slideIn {
